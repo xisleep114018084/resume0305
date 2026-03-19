@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>個人履歷 - AU114018084</title>
     <style>
-        /* CSS 樣式區 */
         :root {
-            --primary-color: #0056b3; /* 亞大風格藍 */
+            --primary-color: #0056b3;
             --secondary-color: #f4f7f6;
             --text-color: #333;
             --accent-color: #ff9800;
@@ -96,7 +95,6 @@
             color: #444;
         }
 
-        /* 按鈕與互動 */
         #download-btn {
             display: block;
             width: 200px;
@@ -122,6 +120,7 @@
 
     <div class="container">
         <header>
+            <img src="photos/8978.png" alt="個人照片" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:15px;">
             <h1>小老鼠</h1>
             <div class="info">
                 <p>學號：<strong>AU114018084</strong></p>
@@ -168,11 +167,8 @@
     </div>
 
     <script>
-        // JavaScript 互動區
         document.addEventListener('DOMContentLoaded', () => {
             console.log("履歷載入完成！學號：AU114018084");
-            
-            // 點擊技能標籤的小彩蛋
             const tags = document.querySelectorAll('.tag');
             tags.forEach(tag => {
                 tag.addEventListener('click', () => {
