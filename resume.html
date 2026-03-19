@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人履歷 - AU114018084</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f4f7f6;
+            --text-color: #333;
+            --accent-color: #ff9800;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .info {
+            margin-top: 10px;
+            color: #666;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 10px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #e9ecef;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .tag:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .project-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 2px solid #ddd;
+        }
+
+        .project-title {
+            font-weight: bold;
+            color: #444;
+        }
+
+        #download-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+
+        @media print {
+            #download-btn { display: none; }
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; border: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="photos/小老鼠.png" alt="個人照片" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:15px;">
+            <h1>小老鼠</h1>
+            <div class="info">
+                <p>學號：<strong>AU114018084</strong></p>
+                <p>Email: AU114018084@asia.edu.tw</p>
+                <p>地址：台中市霧峰區柳豐路500號</p>
+            </div>
+        </header>
+
+        <section id="education">
+            <h2>教育背景</h2>
+            <p><strong>亞洲大學 (Asia University)</strong></p>
+            <p>資訊相關系所  | 2025 - 至今</p>
+        </section>
+
+        <section id="skills">
+            <h2>專業技能</h2>
+            <div class="skill-tags">
+                <span class="tag">HTML / CSS / JS</span>
+                <span class="tag">Python 程式設計</span>
+                <span class="tag">資料分析</span>
+                <span class="tag">介面設計 (UI/UX)</span>
+                <span class="tag">團隊協作</span>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>專案經驗 / 活動經歷</h2>
+            <div class="project-item">
+                <div class="project-title">亞大智慧校園專案</div>
+                <p>負責前端介面開發與優化，提升使用者點擊率 15%。</p>
+            </div>
+            <div class="project-item">
+                <div class="project-title">課外社團活動</div>
+                <p>擔任社團幹部，負責籌畫校內大型講座。</p>
+            </div>
+        </section>
+
+        <section id="summary">
+            <h2>個人簡介</h2>
+            <p id="bio-text">我是小老鼠，目前就讀於亞洲大學。我熱愛學習新技術，並致力於將所學知識應用於實際問題中</p>
+        </section>
+
+        <button id="download-btn" onclick="window.print()">列印 / 儲存為 PDF</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("履歷載入完成！學號：AU114018084");
+            const tags = document.querySelectorAll('.tag');
+            tags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    alert('您選中了技能：' + tag.innerText);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
