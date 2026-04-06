@@ -7,7 +7,18 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI","Microsoft JhengHei",sans-serif;}
 body{background:#eef2f7;color:#333;}
-.container{display:grid;grid-template-columns:280px 1fr;max-width:1000px;margin:30px auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.1);} 
+
+.container{
+display:grid;
+grid-template-columns:280px 1fr;
+max-width:1000px;
+margin:30px auto;
+background:#fff;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
 .sidebar{background:#1e2a38;color:#fff;padding:30px;text-align:center;}
 .sidebar img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:15px;border:4px solid #fff;}
 .sidebar h1{font-size:1.8rem;margin-bottom:10px;}
@@ -23,7 +34,30 @@ body{background:#eef2f7;color:#333;}
 .item-title{font-weight:bold;margin-bottom:5px;}
 .item p{font-size:0.95rem;color:#555;}
 
-button{margin-top:20px;padding:10px 20px;border:none;background:#ff9800;color:#fff;border-radius:6px;cursor:pointer;}
+button{
+margin-top:20px;
+padding:10px 20px;
+border:none;
+background:#ff9800;
+color:#fff;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* 音樂按鈕 */
+.music-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#1e2a38;
+color:#fff;
+border:none;
+padding:12px 18px;
+border-radius:50px;
+font-size:14px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+cursor:pointer;
+}
 
 @media(max-width:768px){
 .container{grid-template-columns:1fr;}
@@ -32,6 +66,11 @@ button{margin-top:20px;padding:10px 20px;border:none;background:#ff9800;color:#f
 </style>
 </head>
 <body>
+
+<!-- 🎵 背景音樂 -->
+<audio id="bgm" loop>
+  <source src="bgm.mp3" type="audio/mpeg">
+</audio>
 
 <div class="container">
 
@@ -82,8 +121,27 @@ button{margin-top:20px;padding:10px 20px;border:none;background:#ff9800;color:#f
 <button onclick="window.print()">列印 / PDF</button>
 
 </div>
-
 </div>
+
+<!-- ▶️ 播放按鈕 -->
+<button class="music-btn" onclick="toggleMusic()" id="musicBtn">
+▶ 播放音樂
+</button>
+
+<script>
+const bgm = document.getElementById("bgm");
+const btn = document.getElementById("musicBtn");
+
+function toggleMusic(){
+    if(bgm.paused){
+        bgm.play();
+        btn.innerText = "⏸ 暫停音樂";
+    }else{
+        bgm.pause();
+        btn.innerText = "▶ 播放音樂";
+    }
+}
+</script>
 
 </body>
 </html>
